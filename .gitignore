@@ -1,4 +1,4 @@
-
+*.json
 *.xml
 *.iml
 *.pyc
