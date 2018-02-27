@@ -189,6 +189,7 @@ elif(sys.argv[1].lower()=="analyze"):
 
     skipZero = False
     sort = False
+    noHeader = False
 
     if(len(sys.argv)>= 4):
         start_date = datetime.strptime(sys.argv[3],"%Y-%m-%d@%H:%M") if sys.argv[3].lower() != "none" else None
@@ -206,6 +207,8 @@ elif(sys.argv[1].lower()=="analyze"):
             skipZero = True
         elif(sys.argv[i] == "sort"):
             sort = True
+        elif(sys.argv[i] == "noheader"):
+            noHeader = True
     InitFeeds()
 
 
@@ -254,7 +257,7 @@ elif(sys.argv[1].lower()=="analyze"):
                 #,
                 #"Starting at " + start_date.strftime(config.jsontimestring) if start_date is not None else "",
                 #"Ending at " + end_date.strftime(config.jsontimestring) if end_date is not None else ""
-            ]
+            ] if not noHeader else []
 
         ] + result
 

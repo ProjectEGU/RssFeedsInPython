@@ -3,6 +3,6 @@
 *.iml
 *.pyc
 *.txt
-*.bat
 *.log
 *.lnk
+*.bat
